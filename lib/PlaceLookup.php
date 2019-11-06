@@ -504,9 +504,9 @@ class PlaceLookup
                 $sTypeLabel = strtolower(isset($aTypeLabel['simplelabel'])?$aTypeLabel['simplelabel']:$aTypeLabel['label']);
                 $sTypeLabel = str_replace(' ', '_', $sTypeLabel);
                 if (!isset($aAddress[$sTypeLabel]) || (isset($aFallback[$sTypeLabel]) && $aFallback[$sTypeLabel]) || $aLine['class'] == 'place') {
-					$aAddress[$sTypeLabel] = $aLine['localname']?$aLine['localname']:$aLine['housenumber'];
-					if (isset($aLine['osm_id']))
-						$aAddress[$sTypeLabel."_osm_id"] = $aLine['osm_id'];
+                    $aAddress[$sTypeLabel] = $aLine['localname']?$aLine['localname']:$aLine['housenumber'];
+                    if (isset($aLine['osm_id']))
+                        $aAddress[$sTypeLabel."_osm_id"] = $aLine['osm_id'];
                 }
                 $aFallback[$sTypeLabel] = $bFallback;
             }
